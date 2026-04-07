@@ -23,10 +23,12 @@
       ],
       "@org/shop/feature-products": ["libs/shop/feature-products/src/index.ts"],
       "@org/shop/shared-ui": ["libs/shop/shared-ui/src/index.ts"],
-      "@org/core": ["core/src/index.ts"],
-      "@org/domain": ["libs/domain/src/index.ts"],
+      "@org/core": ["libs/core/src/index.ts"],
       "@org/features": ["libs/features/src/index.ts"],
-      "@org/ui": ["libs/ui/src/index.ts"]
+      "@org/ui": ["libs/ui/src/index.ts"],
+      "@org/data-access-auth": ["libs/data-access/auth/src/index.ts"],
+      "@org/auth": ["libs/domain/src/index.ts"],
+      "@hekokwkp/core": ["libs/core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

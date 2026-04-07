@@ -1,9 +1,9 @@
 {
-  "name": "admin",
+  "name": "nghekok",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/admin/src",
+  "sourceRoot": "apps/nghekok/src",
   "tags": [],
   "targets": {
     "build": {
@@ -12,18 +12,23 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/admin",
-        "browser": "apps/admin/src/main.ts",
-        "tsConfig": "apps/admin/tsconfig.app.json",
+        "outputPath": "dist/apps/nghekok",
+        "browser": "apps/nghekok/src/main.ts",
+        "tsConfig": "apps/nghekok/tsconfig.app.json",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/admin/public"
+            "input": "apps/nghekok/public"
           }
         ],
         "styles": [
-          "apps/admin/src/styles.css"
-        ]
+          "apps/nghekok/src/styles.css"
+        ],
+        "server": "apps/nghekok/src/main.server.ts",
+        "ssr": {
+          "entry": "apps/nghekok/src/server.ts"
+        },
+        "outputMode": "server"
       },
       "configurations": {
         "production": {
@@ -47,8 +52,8 @@
           "sourceMap": true,
           "fileReplacements": [
             {
-              "replace": "apps/admin/src/environments/environment.ts",
-              "with": "apps/admin/src/environments/environment.development.ts"
+              "replace": "apps/nghekok/src/environments/environment.ts",
+              "with": "apps/nghekok/src/environments/environment.development.ts"
             }
           ]
         }
@@ -60,10 +65,10 @@
       "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "admin:build:production"
+          "buildTarget": "nghekok:build:production"
         },
         "development": {
-          "buildTarget": "admin:build:development"
+          "buildTarget": "nghekok:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,9 +80,9 @@
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "admin:build",
+        "buildTarget": "nghekok:build",
         "port": 4200,
-        "staticFilePath": "dist/apps/admin/browser",
+        "staticFilePath": "dist/apps/nghekok/browser",
         "spa": true
       }
     }

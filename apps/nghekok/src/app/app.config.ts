@@ -4,20 +4,22 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
+import {
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
-import { environment } from '../environments/environment';
-import { APP_CONFIG } from '@org/core';
-
 
 export const appConfig: ApplicationConfig = {
   providers: [
-     { provide: APP_CONFIG, useValue: environment },
-    provideBrowserGlobalErrorListeners(), provideRouter(appRoutes),
+    provideClientHydration(withEventReplay()),
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(appRoutes),
     providePrimeNG({
             theme: {
                 preset: Aura
             }
-    })
+        })
   ],
 };

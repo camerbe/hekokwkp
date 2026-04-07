@@ -1,10 +1,10 @@
 {
-  "name": "auth",
+  "name": "core",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/domain/auth/src",
+  "sourceRoot": "libs/core/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": ["type:domain", "scope:auth"],
+  "tags": ["type:core", "scope:core"],
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint"
